@@ -1,22 +1,24 @@
 import Link from "next/link";
 import React from "react";
-
-const style: React.CSSProperties = {
-  color: "white",
-  textAlign: "center",
-};
+import classes from "./page.module.css";
+import MealsGrid from "../components/meals/meals-grid";
 
 export default function MealsPage() {
   return (
-    <main style={style}>
-      <h1>MealsPage</h1>
-      <p style={style}>
-        <Link href="/meals/share">Share</Link>
-      </p>
-      <p>
-        <Link href="/meals/meal-1">Meal 1</Link>
-      </p>
-    </main>
+    <>
+      <header className={classes.header}>
+        <h1>
+          Delicious meals, created
+          <span className={classes.highlight}> by you.</span>
+        </h1>
+        <p>Choose your favorite recipe and cook it yourself.</p>
+        <p className={classes.cta}>
+          <Link href="/meals/share">Share Your Favorite Recipe</Link>
+        </p>
+      </header>
+      <main className={classes.main}>
+        <MealsGrid meals={[]} />
+      </main>
+    </>
   );
 }
-  
