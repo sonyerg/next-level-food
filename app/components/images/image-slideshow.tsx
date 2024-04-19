@@ -28,8 +28,9 @@ export default function ImageSlideshow() {
     const interval = setInterval(() => {
       setCurrentImageIndex(
         (prevIndex) => (prevIndex < images.length - 1 ? prevIndex + 1 : 0)
-        // if prevIndex is less than the length of images, add 1 to prevIndex
-        // otherwise (prevIndex = 6 which is = images.length), setCurrentImageIndex(0)
+        // if prevIndex is less than the length of images - 1(indeces starts at 0),
+        // add 1 to prevIndex.
+        // otherwise (prevIndex = 6 which is 7 = images.length), setCurrentImageIndex(0)
         // in other words, go back to the first image
       );
     }, 5000);
