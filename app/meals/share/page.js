@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import classes from "./page.module.css";
 import ImagePicker from "../../components/meals/image-picker";
